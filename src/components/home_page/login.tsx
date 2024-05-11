@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { LogDataType } from "./types";
+import { useNavigate } from "react-router-dom";
 
 const inputStyle = {
   height: "3rem",
@@ -20,10 +21,11 @@ const formControlStyle = {
 };
 
 function Login() {
+  const navigate = useNavigate();
   const onSubmit: SubmitHandler<LogDataType> = (data) => {
     // let books = JSON.parse(myData);
     console.log(data);
-    // return <Link to="product" />;
+    navigate("/dashboard");
   };
 
   const {

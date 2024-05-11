@@ -20,6 +20,7 @@ import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { useNavigate } from "react-router-dom";
 
 const inputStyle = {
   height: "3rem",
@@ -36,6 +37,8 @@ function SignUp() {
     dayjs(new Date("2022-04-17").toDateString())
   );
 
+  const navigate = useNavigate();
+
   const handleChange = (event: SelectChangeEvent) => {
     setGender(event.target.value as string);
   };
@@ -43,7 +46,7 @@ function SignUp() {
   const onSubmit: SubmitHandler<SignUpDataType> = (data) => {
     // let books = JSON.parse(myData);
     console.log(data);
-    // return <Link to="product" />;
+    navigate("/dashboard");
   };
 
   const {
@@ -52,7 +55,6 @@ function SignUp() {
     formState: { errors },
   } = useForm<SignUpDataType>({ resolver: zodResolver(SignUpDataType) });
 
-  console.log(errors);
   return (
     <Paper
       elevation={3}
@@ -72,6 +74,7 @@ function SignUp() {
         gap: "1.5rem",
         flexWrap: "wrap",
       }}
+      // action={Link to}
     >
       <FormControl sx={{ ...formControlStyle }}>
         <FormLabel>First Name</FormLabel>
