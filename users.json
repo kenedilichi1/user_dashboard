@@ -1,5 +1,13 @@
 [
   {
-    "name": "hello"
+    "firstName": "Kabs",
+    "lastName": "hello",
+    "address": "1 green-wood steet",
+    "city": "Abakaliki",
+    "state": "Ebonyi",
+    "country": "Nigeria",
+    "email": "example@gmail.com",
+    "dateOfBirth": "1994/10/05",
+    "gender": "male"
   }
 ]
